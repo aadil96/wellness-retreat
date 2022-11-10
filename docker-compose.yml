@@ -1,0 +1,56 @@
+version: "3.7"
+services:
+  app:
+    build:
+      args:
+        user: dev
+        uid: 1000
+      context: ./
+      dockerfile: ./Dockerfile
+    image: wellness-retreat:latest
+    container_name: app
+    restart: unless-stopped
+    working_dir: /var/www/html
+    extra_hosts:
+      - "wellness-retreat:127.0.0.1"
+    hostname: "wellness-retreat"
+    domainname: "test"
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/var/www/html
+      - ./docker-compose/server/apache2.conf:/etc/apache2/apache2.conf
+      - ./docker-compose/server/000-default.conf:/etc/apache2/sites-available/000-default.conf
+      - ./docker-compose/php/opcache.ini:/usr/local/etc/php/conf.d/docker-php-ext-opcache.ini
+    networks:
+      - wellness-retreat
+
+  db:
+    image: mysql:8
+    container_name: db
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./docker-compose/mysql:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE:-faisal_crm}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-sail}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-sail}
+      MYSQL_USER: ${DB_USERNAME:-sail}
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    networks:
+      - wellness-retreat
+
+  mailer:
+    image: mailhog/mailhog:latest
+    container_name: mailer
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+    networks:
+      - wellness-retreat
+networks:
+  wellness-retreat:
+    driver: bridge
