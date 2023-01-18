@@ -173,7 +173,7 @@
                 <h5>After Sales Services:</h5>
                 <p>We may, in the future offer after-sales services to you. Our Customer Service Team may contact via email or telephone for any feedback you may have with respect to the products ordered by you and your experience with us.  They will also provide the opportunity for you to place further orders with us.  You can opt out of this at any time by contacting Customer Service Team on the customer service numbers listed on the site or by sending us an email to that effect on <a href="mailto:{{ config('mail.from.address') }}">{{ config('mail.from.address') }}</a>.</p>
 
-                <p>If you have any concerns, questions, comments or complaints regarding any content on or any other aspects of the site, these Terms or our products, please contact us on any of the customer service numbers as listed on the site or by sending us an email addressing your concerns to Nutritionalplanet1@gmail.com and we will be happy to help you.</p>
+                <p>If you have any concerns, questions, comments or complaints regarding any content on or any other aspects of the site, these Terms or our products, please contact us on any of the customer service numbers as listed on the site or by sending us an email addressing your concerns to <a href="mailto:{{ env('MAIL_FROM_ADDRESS') }}">{{ env('MAIL_FROM_ADDRESS') }}</a> and we will be happy to help you.</p>
             </div>
         </div>
     </div>

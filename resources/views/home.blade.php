@@ -42,7 +42,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                         <div class="single-item">
                             <div class="img-holder">
-                                <img alt="" src="{{ asset('images/products/'.$product->slug.'.jpeg') }}">
+                                 <img alt="" width="250" height="250" src="{{ asset('images/products/'.$product->slug.'-thumbnail.jpeg') }}" onerror="this.onerror=null; this.src='{{ asset('images/products/coming-soon.png') }}'">
                                 <div class="overlay">
                                     <div class="icon-holder">
                                         <a href="{{ route('product-detail', ['slug' => $product->slug]) }}"><i class="fa fa-share"></i></a>

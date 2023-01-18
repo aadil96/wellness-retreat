@@ -20,7 +20,7 @@
             <nav class="navigation clearfix">
                 <div id="menuzord" class="menuzord">
                     <a href="{{ route('home') }}" class="menuzord-brand">
-                        <img src="{{ asset('images/logo/logo.ico') }}" style="width: 259px; height: 56px;" alt="Logo Image" id="skin-logo-img" />
+                        <img src="{{ asset('images/logo/logo.png') }}" style="width: 259px; height: 56px;" alt="Logo Image" id="skin-logo-img" />
                     </a>
                     <ul class="menuzord-menu">
                         <li>
