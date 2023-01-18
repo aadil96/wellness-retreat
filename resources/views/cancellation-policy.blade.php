@@ -105,7 +105,7 @@
                     <h3>How do I cancel an order?</h3>
                     <p>If you ordered online then you can cancel your order before the product has been dispatched for shipping. If payment has been received for the order, the entire order amount will be refunded to you.</p>
                     <p>In case the item you have ordered has been shipped but has not yet been delivered to you, you may still cancel the order. Your refund will be processed once we receive the originally ordered product back from the courier.</p>
-                    <p>Cancellation requests for a product from your order or the order in entirety can be initiated via email to Nutritionalplanet1@gmail.com or by contacting customer services on.</p>
+                    <p>Cancellation requests for a product from your order or the order in entirety can be initiated via email to <a href="mailto:{{ env('MAIL_FROM_ADDRESS') }}">{{ env('MAIL_FROM_ADDRESS') }}</a> or by contacting customer services on.</p>
 
                 </div>
             </div>

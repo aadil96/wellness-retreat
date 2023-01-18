@@ -6,7 +6,7 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="single-footer-widget">
                     <div class="footer-logo">
-                        <a href="{{ route('home') }}"><img src="{{ asset('images/logo/logo.ico') }}" style="width: 259px; height: 56px;" alt="Logo Image" id="skin-logo-img" /></a>
+                        <a href="{{ route('home') }}"><img src="{{ asset('images/logo/logo.png') }}" style="width: 259px; height: 56px;" alt="Logo Image" id="skin-logo-img" /></a>
                     </div>
                     <div class="caption-text">
                         <p>We believe in a firm focus on quality, value for money and unsurpassed customer service. We are here to support you in your health and wellbeing goals, no matter how big or small.</p>
@@ -74,7 +74,7 @@
             <div class="clearfix">
                 <div class="pull-left">
                     <div class="copy-right">
-                        <p>Copyright © 2022 Nutritional planet Limited are a UK based Company</p>
+                        <p>Copyright © 2022 {{ env('APP_NAME_REF') }} are a UK based Company</p>
                     </div>
                 </div>
                 {{-- <div class="pull-right">

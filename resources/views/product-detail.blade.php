@@ -42,15 +42,15 @@
                             <div class="img-box">
                                 <div class="single-product-carousel-content-box owl-theme owl-carousel">
                                     <div class="item">
-                                        <img src="{{ asset('images/products/'.$product->slug.'.jpeg')}}" alt="Awesome Image" />
+                                        <img width="250" height="250" src="{{ asset('images/products/'.$product->slug.'-thumbnail.jpeg')}}" alt="Awesome Image" onerror="this.onerror=null; this.src='{{ asset('images/products/coming-soon.png') }}'"/>
                                     </div>
                                     <!-- /.item -->
                                     <div class="item">
-                                        <img src="{{ asset('images/products/'.$product->slug.'-direction.jpeg')}}" alt="Awesome Image" />
+                                        <img width="250" height="250" src="{{ asset('images/products/'.$product->slug.'-carousel-1.jpeg')}}" alt="Awesome Image" onerror="this.onerror=null; this.src='{{ asset('images/products/coming-soon.png') }}'"/>
                                     </div>
                                     <!-- /.item -->
                                     <div class="item">
-                                        <img src="{{ asset('images/products/'.$product->slug.'-ingredients.jpeg')}}" alt="Awesome Image" />
+                                        <img width="250" height="250" src="{{ asset('images/products/'.$product->slug.'-carousel-2.jpeg')}}" alt="Awesome Image" onerror="this.onerror=null; this.src='{{ asset('images/products/coming-soon.png') }}'"/>
                                     </div>
                                     <!-- /.item -->
                                 </div>
@@ -58,14 +58,14 @@
                                 <div class="single-product-carousel-thumbnail-box owl-theme owl-carousel">
 
                                     <div class="item">
-                                        <img src="{{ asset('images/products/'.$product->slug.'.jpeg')}}" alt="Awesome Image" />
+                                        <img src="{{ asset('images/products/'.$product->slug.'-thumbnail.jpeg')}}" alt="Awesome Image" onerror="this.onerror=null; this.src='{{ asset('images/products/coming-soon.png') }}'"/>
                                     </div>
 
                                     <div class="item">
-                                        <img src="{{ asset('images/products/'.$product->slug.'-direction.jpeg')}}" alt="Awesome Image" />
+                                        <img src="{{ asset('images/products/'.$product->slug.'-carousel-1.jpeg')}}" alt="Awesome Image" onerror="this.onerror=null; this.src='{{ asset('images/products/coming-soon.png') }}'"/>
                                     </div>
                                     <div class="item">
-                                        <img src="{{ asset('images/products/'.$product->slug.'-ingredients.jpeg')}}" alt="Awesome Image" />
+                                        <img src="{{ asset('images/products/'.$product->slug.'-carousel-2.jpeg')}}" alt="Awesome Image" onerror="this.onerror=null; this.parentElement.style.display='none'"/>
                                     </div>
                                 </div>
                                 <!-- /.single-product-carousel-thumbnail-box owl-theme owl-carousel -->

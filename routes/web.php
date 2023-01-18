@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,11 +15,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', function () {
-    $data = include(__DIR__.'/../app/Models/Product.php');
-    $products = [];
-    foreach ($data as $product) {
-        $products[] = (object) $product;
-    }
+    $products = Cache::remember('products', now()->addHours(12), function () {
+        $data = include(__DIR__.'/../app/Models/Product.php');
+        $products = [];
+        foreach ($data as $product) {
+            $products[] = (object) $product;
+        }
+
+        return $products;
+    });
+
     return view('home', ['products' => $products]);
 })
     ->name('home');
@@ -31,11 +37,15 @@ Route::get('privacy-policy', fn () => view('privacy-policy'))->name('privacy-pol
 Route::get('terms-and-conditions', fn () => view('terms-and-conditions'))->name('terms-and-conditions');
 
 Route::get('products', function () {
-    $data = include(__DIR__.'/../app/Models/Product.php');
-    $products = [];
-    foreach ($data as $product) {
-        $products[] = (object) $product;
-    }
+    $products = Cache::remember('products', now()->addHours(12), function () {
+        $data = include(__DIR__.'/../app/Models/Product.php');
+        $products = [];
+        foreach ($data as $product) {
+            $products[] = (object) $product;
+        }
+
+        return $products;
+    });
     return view('products', ['products' => $products]);
 })->name('products');
 
